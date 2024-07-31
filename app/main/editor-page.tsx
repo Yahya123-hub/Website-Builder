@@ -11,7 +11,7 @@ const EditorPage = async () => {
     <EditorProvider>
       <EditorNavigation/>
       <div className="h-full flex justify-center">
-        <EditorContent liveMode={true} />
+        <EditorContent liveMode={false} /> 
       </div>
       <EditorSidebar/>
     </EditorProvider>

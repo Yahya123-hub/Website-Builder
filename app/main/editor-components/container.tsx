@@ -120,6 +120,136 @@ const Container = ({ element }: Props) => {
           },
         })
         break
+
+      case 'inputfield':
+          dispatch({
+            type: 'ADD_ELEMENT',
+            payload: {
+              containerId: id,
+              elementDetails: {
+                content: [],
+                id: uuidv4(),
+                name: 'Input Field',
+                styles: {},
+                type: 'inputfield',
+              },
+            },
+          })
+      break
+
+      case 'header':
+        dispatch({
+          type: 'ADD_ELEMENT',
+          payload: {
+            containerId: id,
+            elementDetails: {
+              content: [],
+              id: uuidv4(),
+              name: 'Header',
+              styles: {},
+              type: 'header',
+            },
+          },
+        })
+    break
+
+    case 'hero':
+      dispatch({
+        type: 'ADD_ELEMENT',
+        payload: {
+          containerId: id,
+          elementDetails: {
+            content: [],
+            id: uuidv4(),
+            name: 'Hero',
+            styles: {},
+            type: 'hero',
+          },
+        },
+      })
+  break
+
+  case 'value':
+    dispatch({
+      type: 'ADD_ELEMENT',
+      payload: {
+        containerId: id,
+        elementDetails: {
+          content: [],
+          id: uuidv4(),
+          name: 'Value',
+          styles: {},
+          type: 'value',
+        },
+      },
+    })
+break
+
+
+case 'testimonial':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Testimonial',
+        styles: {},
+        type: 'testimonial',
+      },
+    },
+  })
+break
+
+case 'features':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Features',
+        styles: {},
+        type: 'features',
+      },
+    },
+  })
+break
+
+case 'footer':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Footer',
+        styles: {},
+        type: 'footer',
+      },
+    },
+  })
+break
+
+case 'button':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Button',
+        styles: {},
+        type: 'button',
+      },
+    },
+  })
+break
+
       case '2Col':
         dispatch({
           type: 'ADD_ELEMENT',

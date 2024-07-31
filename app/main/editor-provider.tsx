@@ -9,8 +9,39 @@ export type EditorElement = {
   styles: React.CSSProperties
   name: string
   type: EditorBtns
-  content: EditorElement[] | { href?: string; innerText?: string; src?: string }
+  content: {
+    title?: string
+    tagline?: string
+    quote?: string
+    author?: string
+    description?: string
+    value1?: string
+    value2?: string
+    value3?: string
+    value4?: string
+    value1Description?: string
+    value2Description?: string
+    value3Description?: string
+    value4Description?: string
+    feature_title?: string
+    feature_description?: string
+    feature1?: string
+    feature1Description?: string
+    feature2?: string
+    feature2Description?: string
+    feature3?: string
+    feature3Description?: string
+    feature4?: string
+    feature4Description?: string
+    heading?: string
+    subheading?: string
+    href?: string
+    innerText?: string
+    [key: string]: any
+    src?: string
+  } | EditorElement[]
 }
+
 
 export type Editor = {
   liveMode: boolean

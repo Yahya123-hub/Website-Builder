@@ -9,6 +9,14 @@ export type EditorBtns =
   | 'video'
   | '__body'
   | 'image'
+  | 'hero'
+  | 'value'
+  | 'testimonial'
+  | 'features'  
+  | 'footer'  
+  | 'button'  
+  | 'inputfield'
+  | 'header'
   | null
   | '3Col'
 

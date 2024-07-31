@@ -13,6 +13,17 @@ import TwoColumnsPlaceholder from './two-columns-placeholder'
 import LinkPlaceholder from './link-placeholder'
 import ContactFormComponentPlaceholder from './contact-form-placeholder'
 import CheckoutPlaceholder from './checkout-placeholder'
+import InputPlaceholder from './input-field-placeholder'
+import HeaderPlaceholder from './header-section-placeholder'
+import HeroPlaceholder from './hero-section-placeholder'
+import ValPlaceholder from './value-section-placeholder'
+import TestPlaceholder from './testimonial-section-placeholder'
+import FeaturePlaceholder from './feature-section-placeholder'
+import FooterPlaceholder from './footer-section-placeholder'
+import ButtonPlaceholder from './button-placeholder'
+
+
+
 
 type Props = {}
 
@@ -21,13 +32,61 @@ const ComponentsTab = (props: Props) => {
     Component: React.ReactNode
     label: string
     id: EditorBtns
-    group: 'layout' | 'elements'
+    group: 'layout' | 'Basic elements' | 'landing page elements'
   }[] = [
     {
       Component: <TextPlaceholder />,
       label: 'Text',
       id: 'text',
-      group: 'elements',
+      group: 'Basic elements',
+    },
+    {
+      Component: <HeaderPlaceholder />,
+      label: 'Header',
+      id: 'header',
+      group: 'landing page elements',
+    },
+    {
+      Component: <HeroPlaceholder />,
+      label: 'Hero',
+      id: 'hero',
+      group: 'landing page elements',
+    },
+    {
+      Component: <ValPlaceholder />,
+      label: 'Value',
+      id: 'value',
+      group: 'landing page elements',
+    },
+    {
+      Component: <FeaturePlaceholder />,
+      label: 'Features',
+      id: 'features',
+      group: 'landing page elements',
+    },
+    {
+      Component: <FooterPlaceholder />,
+      label: 'Footer',
+      id: 'footer',
+      group: 'landing page elements',
+    },
+    {
+      Component: <TestPlaceholder />,
+      label: 'Testimonials',
+      id: 'testimonial',
+      group: 'landing page elements',
+    },
+    {
+      Component: <InputPlaceholder />,
+      label: 'Input',
+      id: 'inputfield',
+      group: 'Basic elements',
+    },
+    {
+      Component: <ButtonPlaceholder />,
+      label: 'Button',
+      id: 'button',
+      group: 'Basic elements',
     },
     {
       Component: <ContainerPlaceholder />,
@@ -45,25 +104,25 @@ const ComponentsTab = (props: Props) => {
       Component: <VideoPlaceholder />,
       label: 'Video',
       id: 'video',
-      group: 'elements',
+      group: 'Basic elements',
     },
     {
       Component: <ContactFormComponentPlaceholder />,
       label: 'Contact',
       id: 'contactForm',
-      group: 'elements',
+      group: 'Basic elements',
     },
     {
       Component: <CheckoutPlaceholder />,
       label: 'Checkout',
       id: 'paymentForm',
-      group: 'elements',
+      group: 'Basic elements',
     },
     {
       Component: <LinkPlaceholder />,
       label: 'Link',
       id: 'link',
-      group: 'elements',
+      group: 'Basic elements',
     },
   ]
 
@@ -98,10 +157,10 @@ const ComponentsTab = (props: Props) => {
         value="Elements"
         className="px-6 py-0 "
       >
-        <AccordionTrigger className="!no-underline">Elements</AccordionTrigger>
+        <AccordionTrigger className="!no-underline">Basic Elements</AccordionTrigger>
         <AccordionContent className="flex flex-wrap gap-2 ">
           {elements
-            .filter((element) => element.group === 'elements')
+            .filter((element) => element.group === 'Basic elements')
             .map((element) => (
               <div
                 key={element.id}
@@ -115,13 +174,13 @@ const ComponentsTab = (props: Props) => {
       </AccordionItem>
 
       <AccordionItem
-        value="Pre Made Website Templates"
+        value="Website Structures"
         className="px-6 py-0 "
       >
-        <AccordionTrigger className="!no-underline">Pre Made Website Templates</AccordionTrigger>
+        <AccordionTrigger className="!no-underline">Landing Page Elements</AccordionTrigger>
         <AccordionContent className="flex flex-wrap gap-2 ">
           {elements
-            .filter((element) => element.group === 'elements')
+            .filter((element) => element.group === 'landing page elements')
             .map((element) => (
               <div
                 key={element.id}
