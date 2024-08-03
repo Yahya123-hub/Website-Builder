@@ -25,6 +25,13 @@ import ButtonsetPlaceholder from './button-set-placeholder'
 import LoadingPlaceholder from './load-section-placeholder'
 import CartoonPlaceholder from './cartoons-placeholder'
 import TexthoverPlaceholder from './text-hover-placeholder'
+import GreetingsPlaceholder from './greetings-section-placeholder'
+import LaserPlaceholder from './laser-placeholder'
+import GraphsPlaceholder from './graphs-placeholder'
+import NavbarPlaceholder from './navbar-placeholder'
+import GDPlaceholder from './gridsandcards-placeholder'
+import ModalsPlaceholder from './modals-placeholder'
+
 
 
 
@@ -36,7 +43,7 @@ const ComponentsTab = (props: Props) => {
     Component: React.ReactNode
     label: string
     id: EditorBtns
-    group: 'layout' | 'Basic elements' | 'landing page elements'
+    group: 'layout' | 'Basic elements' | 'landing page elements' |'Advanced-elements'
   }[] = [
     {
       Component: <TextPlaceholder />,
@@ -57,6 +64,18 @@ const ComponentsTab = (props: Props) => {
       group: 'landing page elements',
     },
     {
+      Component: <GraphsPlaceholder />,
+      label: 'Graphs',
+      id: 'graph',
+      group: 'Advanced-elements',
+    },
+    {
+      Component: <NavbarPlaceholder />,
+      label: 'Navbar',
+      id: 'navbars',
+      group: 'Advanced-elements',
+    },
+    {
       Component: <ValPlaceholder />,
       label: 'Value',
       id: 'value',
@@ -68,16 +87,27 @@ const ComponentsTab = (props: Props) => {
       id: 'features',
       group: 'landing page elements',
     },
-    {
-      Component: <FooterPlaceholder />,
+    /*  Component: <FooterPlaceholder />,
       label: 'Footer',
       id: 'footer',
       group: 'landing page elements',
-    },
+    },*/
     {
       Component: <CartoonPlaceholder />,
       label: 'Animations',
       id: 'cartoons',
+      group: 'landing page elements',
+    },
+    {
+      Component: <GreetingsPlaceholder />,
+      label: 'Greetings',
+      id: 'greetings',
+      group: 'landing page elements',
+    },
+    {
+      Component: <LaserPlaceholder />,
+      label: 'Lasers',
+      id: 'lasers',
       group: 'landing page elements',
     },
     {
@@ -139,6 +169,18 @@ const ComponentsTab = (props: Props) => {
       label: 'Contact',
       id: 'contactForm',
       group: 'Basic elements',
+    },
+    {
+      Component: <GDPlaceholder />,
+      label: 'Grids and Cards',
+      id: 'gridsandcards',
+      group: 'Advanced-elements',
+    },
+    {
+      Component: <ModalsPlaceholder />,
+      label: 'Carousel and Sliders',
+      id: 'modals',
+      group: 'Advanced-elements',
     },
     {
       Component: <CheckoutPlaceholder />,
@@ -209,6 +251,27 @@ const ComponentsTab = (props: Props) => {
         <AccordionContent className="flex flex-wrap gap-2 ">
           {elements
             .filter((element) => element.group === 'landing page elements')
+            .map((element) => (
+              <div
+                key={element.id}
+                className="flex-col items-center justify-center flex"
+              >
+                {element.Component}
+                <span className="text-muted-foreground">{element.label}</span>
+              </div>
+            ))}
+        </AccordionContent>
+      </AccordionItem>
+
+
+      <AccordionItem
+        value="Advanced-elements"
+        className="px-6 py-0 "
+      >
+        <AccordionTrigger className="!no-underline">Advanced Elements</AccordionTrigger>
+        <AccordionContent className="flex flex-wrap gap-2 ">
+          {elements
+            .filter((element) => element.group === 'Advanced-elements')
             .map((element) => (
               <div
                 key={element.id}

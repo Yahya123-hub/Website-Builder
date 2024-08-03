@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { Badge } from '@/components/ui/badge'
-import { EditorElement, useEditor } from '../editor-provider'
-import clsx from 'clsx'
-import { Trash } from 'lucide-react'
-import React, { useState } from 'react'
-import './Animationtext.css'
+import { Badge } from '@/components/ui/badge';
+import { EditorElement, useEditor } from '../editor-provider';
+import clsx from 'clsx';
+import { Trash } from 'lucide-react';
+import React, { useState } from 'react';
+import './Animationtext.css';
 
 type Concept = 
   | 'concept-one' 
@@ -14,12 +14,11 @@ type Concept =
   | 'concept-four' 
   | 'concept-five' 
   | 'concept-six' 
-  | 'concept-seven' 
-  | 'concept-eight';
+  | 'concept-seven';
 
 type Props = {
   element: EditorElement;
-}
+};
 
 const Texthover = (props: Props) => {
   const { dispatch, state } = useEditor();
@@ -42,6 +41,12 @@ const Texthover = (props: Props) => {
     });
   };
 
+  const handleTextChange = (e: React.ChangeEvent<HTMLDivElement>, index: number) => {
+    const newText = e.target.innerText;
+    // Update the content based on the index or the concept
+    // Implement the logic for updating the state or dispatch an action
+  };
+
   const renderContent = () => {
     switch (concept) {
       case 'concept-one':
@@ -50,7 +55,12 @@ const Texthover = (props: Props) => {
             {[...Array(9)].map((_, i) => (
               <div key={i} className={`hover hover-${i + 1}`}></div>
             ))}
-            <h1>Desert</h1>
+            <h1
+              contentEditable={!state.editor.liveMode}
+              onInput={(e) => handleTextChange(e as any, 0)}
+            >
+              Desert
+            </h1>
           </div>
         );
       case 'concept-two':
@@ -58,7 +68,12 @@ const Texthover = (props: Props) => {
           <div className="concept concept-two">
             {['F', 'O', 'R', 'E', 'S', 'T'].map((val, index) => (
               <div key={index} className={`hover hover-${index + 1}`}>
-                <h1>{val}</h1>
+                <h1
+                  contentEditable={!state.editor.liveMode}
+                  onInput={(e) => handleTextChange(e as any, index)}
+                >
+                  {val}
+                </h1>
               </div>
             ))}
           </div>
@@ -71,7 +86,12 @@ const Texthover = (props: Props) => {
                 <div key={index} className={`hover hover-${index + 1}`}>
                   <div></div>
                   <div></div>
-                  <h1>{val}</h1>
+                  <h1
+                    contentEditable={!state.editor.liveMode}
+                    onInput={(e) => handleTextChange(e as any, index)}
+                  >
+                    {val}
+                  </h1>
                 </div>
               ))}
             </div>
@@ -80,7 +100,13 @@ const Texthover = (props: Props) => {
       case 'concept-four':
         return (
           <div className="concept concept-four">
-            <h1 className={`hover hover-${Math.floor(Math.random() * 3) + 1}`}>Glacier</h1>
+            <h1
+              contentEditable={!state.editor.liveMode}
+              className={`hover hover-${Math.floor(Math.random() * 3) + 1}`}
+              onInput={(e) => handleTextChange(e as any, 0)}
+            >
+              Glacier
+            </h1>
           </div>
         );
       case 'concept-five':
@@ -88,7 +114,12 @@ const Texthover = (props: Props) => {
           <div className="concept concept-five">
             <h1 className="word">
               {['M', 'O', 'U', 'N', 'T', 'A', 'I', 'N', 'S'].map((val, index) => (
-                <span key={index} className={`char hover hover-${index + 1}`}>
+                <span
+                  key={index}
+                  className={`char hover hover-${index + 1}`}
+                  contentEditable={!state.editor.liveMode}
+                  onInput={(e) => handleTextChange(e as any, index)}
+                >
                   {val}
                 </span>
               ))}
@@ -100,7 +131,12 @@ const Texthover = (props: Props) => {
           <div className="concept concept-six">
             <h1 className="word">
               {['O', 'C', 'E', 'A', 'N'].map((val, index) => (
-                <span key={index} className={`char hover hover-${index + 1}`}>
+                <span
+                  key={index}
+                  className={`char hover hover-${index + 1}`}
+                  contentEditable={!state.editor.liveMode}
+                  onInput={(e) => handleTextChange(e as any, index)}
+                >
                   {val}
                 </span>
               ))}
@@ -110,21 +146,16 @@ const Texthover = (props: Props) => {
       case 'concept-seven':
         return (
           <div className="concept concept-seven">
-            <h1 className={`hover hover-${Math.floor(Math.random() * 3) + 1}`}>fries</h1>
+            <h1
+              contentEditable={!state.editor.liveMode}
+              className={`hover hover-${Math.floor(Math.random() * 3) + 1}`}
+              onInput={(e) => handleTextChange(e as any, 0)}
+            >
+              Fries
+            </h1>
           </div>
         );
-      case 'concept-eight':
-        return (
-          <div className="concept concept-eight">
-            <div className="word">
-              {['F', 'A', 'L', 'L', 'S'].map((val, index) => (
-                <div key={index} className={`char hover hover-${index + 1}`} data-content={val}>
-                  {val}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
+
       default:
         return null;
     }
@@ -157,23 +188,24 @@ const Texthover = (props: Props) => {
       <div className="main-content">
         {renderContent()}
       </div>
-      <div className="concept-selector">
-        <label htmlFor="concept-select">Choose a concept:</label>
-        <select
-          id="concept-select"
-          value={concept}
-          onChange={(e) => setConcept(e.target.value as Concept)}
-        >
-          <option value="concept-one">Desert</option>
-          <option value="concept-two">Forest</option>
-          <option value="concept-three">Canyon</option>
-          <option value="concept-four">Glacier</option>
-          <option value="concept-five">Mountains</option>
-          <option value="concept-six">Ocean</option>
-          <option value="concept-seven">Fries</option>
-          <option value="concept-eight">Falls</option>
-        </select>
-      </div>
+      {!state.editor.liveMode && (
+        <div className="concept-selector">
+          <label htmlFor="concept-select">Choose a concept:</label>
+          <select
+            id="concept-select"
+            value={concept}
+            onChange={(e) => setConcept(e.target.value as Concept)}
+          >
+            <option value="concept-one">Desert</option>
+            <option value="concept-two">Forest</option>
+            <option value="concept-three">Canyon</option>
+            <option value="concept-four">Glacier</option>
+            <option value="concept-five">Mountains</option>
+            <option value="concept-six">Ocean</option>
+            <option value="concept-seven">Fries</option>
+          </select>
+        </div>
+      )}
     </section>
   );
 };

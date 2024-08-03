@@ -18,6 +18,13 @@ import ButtonSet from './buttonset'
 import Loading from './loading'
 import Animations from './animations'
 import Texthover from './texthover'
+import TextAnimation from './greetings'
+import Laser from './lasers'
+import Graphs from './graphs'
+import NavbarEditor from './navs'
+import GD from './GD'
+import Modals from './modals'
+
 
 
 
@@ -69,6 +76,18 @@ const Component_distributor = ({ element }: Props) => {
         return <Animations element={element} />
     case 'texthover':
         return <Texthover element={element} />
+    case 'greetings':
+        return <TextAnimation element={element} />
+    case 'lasers':
+        return <Laser element={element} />
+    case 'graph':
+        return <Graphs element={element} />
+    case 'navbars':
+        return <NavbarEditor element={element} />
+    case 'gridsandcards':
+        return <GD element={element} />
+    case 'modals':
+        return <Modals element={element} />
 
 
     default:

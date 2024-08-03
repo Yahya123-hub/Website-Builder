@@ -1,9 +1,10 @@
 'use client'
+
 import { Badge } from '@/components/ui/badge'
 import { EditorElement, useEditor } from '../editor-provider'
 import clsx from 'clsx'
 import { Trash } from 'lucide-react'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 type Props = {
   element: EditorElement
@@ -11,6 +12,8 @@ type Props = {
 
 const HeaderComponent = (props: Props) => {
   const { dispatch, state } = useEditor()
+  const [textColor, setTextColor] = useState<string>(props.element.styles.color || '#000000')
+
 
   const handleDeleteElement = () => {
     dispatch({
@@ -45,7 +48,12 @@ const HeaderComponent = (props: Props) => {
     })
   }
 
-  const styles = props.element.styles
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newColor = e.target.value
+    setTextColor(newColor)
+  }
+
+  const styles = { ...props.element.styles, color: textColor }
 
   return (
     <header
@@ -87,6 +95,17 @@ const HeaderComponent = (props: Props) => {
         <a href="#services" className="hover:underline">Services</a>
         <a href="#contact" className="hover:underline">Contact</a>
       </nav>
+
+      {!state.editor.liveMode && (
+        <div className="absolute bottom-4 right-4">
+          <input
+            type="color"
+            value={textColor}
+            onChange={handleColorChange}
+            title="Change Text Color"
+          />
+        </div>
+      )}
 
       {state.editor.selectedElement.id === props.element.id &&
         !state.editor.liveMode && (

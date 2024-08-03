@@ -317,6 +317,107 @@ case 'texthover':
 break
 
 
+case 'greetings':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Greetings',
+        styles: {},
+        type: 'greetings',
+      },
+    },
+  })
+break
+
+
+case 'lasers':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Lasers',
+        styles: {},
+        type: 'lasers',
+      },
+    },
+  })
+break
+
+
+case 'graph':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Graph',
+        styles: {},
+        type: 'graph',
+      },
+    },
+  })
+break
+
+
+case 'navbars':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Navbars',
+        styles: {},
+        type: 'navbars',
+      },
+    },
+  })
+break
+
+
+case 'gridsandcards':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Grids and Cards',
+        styles: {},
+        type: 'gridsandcards',
+      },
+    },
+  })
+break
+
+case 'modals':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Modals',
+        styles: {},
+        type: 'modals',
+      },
+    },
+  })
+break
+
+
       case '2Col':
         dispatch({
           type: 'ADD_ELEMENT',

@@ -10,7 +10,7 @@ type Props = {
   element: EditorElement
 }
 
-const FooterSection = (props: Props) => {
+const FooterSection: React.FC<Props> = (props) => {
   const { dispatch, state } = useEditor()
 
   const handleDeleteElement = () => {
@@ -97,7 +97,7 @@ const FooterSection = (props: Props) => {
         {!Array.isArray(props.element.content) && props.element.content.contact_info || 'Contact information: email@example.com'}
       </p>
 
-      <div className="flex gap-6">
+      <div className="flex gap-6 justify-center">
         <a href="#privacy" className="hover:underline">Privacy Policy</a>
         <a href="#terms" className="hover:underline">Terms of Service</a>
         <a href="#contact" className="hover:underline">Contact Us</a>
