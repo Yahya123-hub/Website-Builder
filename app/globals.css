@@ -119,3 +119,48 @@ B (255 */
     transform: scale(1);
   }
 }
+
+
+
+
+
+/* styles/globals.css */
+
+@keyframes slide {
+  0%, 12.66%, 100% { transform: translateY(0); }
+  16.66%, 29.32% { transform: translateY(-100%); }
+  33.32%, 45.98% { transform: translateY(-200%); }
+  49.98%, 62.64% { transform: translateY(-300%); }
+  66.64%, 79.3% { transform: translateY(-200%); }
+  83.3%, 95.96% { transform: translateY(-100%); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.content__container:before, .content__container:after {
+  content: '[';
+  color: #16a085;
+  font-size: 42px;
+  line-height: 40px;
+  animation: fadeInOut 2s infinite;
+}
+
+.content__container:after {
+  content: ']';
+}
+
+.content__list {
+  margin: 0;
+  padding-left: 1rem;
+  text-align: left;
+  list-style: none;
+  animation: slide 10s infinite;
+}
+
+.content__item {
+  line-height: 40px;
+  height: 40px;
+}

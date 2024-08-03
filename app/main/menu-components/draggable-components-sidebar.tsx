@@ -21,6 +21,10 @@ import TestPlaceholder from './testimonial-section-placeholder'
 import FeaturePlaceholder from './feature-section-placeholder'
 import FooterPlaceholder from './footer-section-placeholder'
 import ButtonPlaceholder from './button-placeholder'
+import ButtonsetPlaceholder from './button-set-placeholder'
+import LoadingPlaceholder from './load-section-placeholder'
+import CartoonPlaceholder from './cartoons-placeholder'
+import TexthoverPlaceholder from './text-hover-placeholder'
 
 
 
@@ -68,6 +72,30 @@ const ComponentsTab = (props: Props) => {
       Component: <FooterPlaceholder />,
       label: 'Footer',
       id: 'footer',
+      group: 'landing page elements',
+    },
+    {
+      Component: <CartoonPlaceholder />,
+      label: 'Animations',
+      id: 'cartoons',
+      group: 'landing page elements',
+    },
+    {
+      Component: <TexthoverPlaceholder />,
+      label: 'Scenic Text',
+      id: 'texthover',
+      group: 'landing page elements',
+    },
+    {
+      Component: <LoadingPlaceholder />,
+      label: 'Loading',
+      id: 'loading',
+      group: 'landing page elements',
+    },
+    {
+      Component: <ButtonsetPlaceholder />,
+      label: 'Button set',
+      id: 'buttonset',
       group: 'landing page elements',
     },
     {

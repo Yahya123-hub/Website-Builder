@@ -14,6 +14,12 @@ import TestimonialComponent from './testimonial'
 import FeaturesSection from './features'
 import FooterSection from './footer'
 import ButtonSection from './Button'
+import ButtonSet from './buttonset'
+import Loading from './loading'
+import Animations from './animations'
+import Texthover from './texthover'
+
+
 
 
 
@@ -55,6 +61,16 @@ const Component_distributor = ({ element }: Props) => {
         return <FooterSection element={element} />
     case 'button':
         return <ButtonSection element={element} />
+    case 'buttonset':
+        return <ButtonSet element={element} />
+    case 'loading':
+        return <Loading element={element} />
+    case 'cartoons':
+        return <Animations element={element} />
+    case 'texthover':
+        return <Texthover element={element} />
+
+
     default:
       return null
   }

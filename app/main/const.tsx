@@ -12,9 +12,13 @@ export type EditorBtns =
   | 'hero'
   | 'value'
   | 'testimonial'
+  | 'cartoons'
   | 'features'  
   | 'footer'  
   | 'button'  
+  | 'buttonset'  
+  | 'loading'  
+  | 'texthover'  
   | 'inputfield'
   | 'header'
   | null

@@ -250,6 +250,73 @@ case 'button':
   })
 break
 
+case 'buttonset':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Buttonset',
+        styles: {},
+        type: 'buttonset',
+      },
+    },
+  })
+break
+
+
+case 'loading':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Loading',
+        styles: {},
+        type: 'loading',
+      },
+    },
+  })
+break
+
+
+case 'cartoons':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Cartoons',
+        styles: {},
+        type: 'cartoons',
+      },
+    },
+  })
+break
+
+case 'texthover':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Text hover',
+        styles: {},
+        type: 'texthover',
+      },
+    },
+  })
+break
+
+
       case '2Col':
         dispatch({
           type: 'ADD_ELEMENT',

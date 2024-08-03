@@ -38,6 +38,7 @@ export type EditorElement = {
     href?: string
     innerText?: string
     [key: string]: any
+    
     src?: string
   } | EditorElement[]
 }
