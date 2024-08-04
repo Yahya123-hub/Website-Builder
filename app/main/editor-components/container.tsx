@@ -418,6 +418,73 @@ case 'modals':
 break
 
 
+case 'search':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Search',
+        styles: {},
+        type: 'search',
+      },
+    },
+  })
+break
+
+
+case 'tc':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Tabs and Accordions',
+        styles: {},
+        type: 'tc',
+      },
+    },
+  })
+break
+
+
+case 'steps':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Steps',
+        styles: {},
+        type: 'steps',
+      },
+    },
+  })
+break
+
+
+case 'sm':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Social Media',
+        styles: {},
+        type: 'sm',
+      },
+    },
+  })
+break
+
       case '2Col':
         dispatch({
           type: 'ADD_ELEMENT',

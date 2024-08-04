@@ -31,6 +31,12 @@ import GraphsPlaceholder from './graphs-placeholder'
 import NavbarPlaceholder from './navbar-placeholder'
 import GDPlaceholder from './gridsandcards-placeholder'
 import ModalsPlaceholder from './modals-placeholder'
+import SearchPlaceholder from './search-placeholder'
+import TCPlaceholder from './tc-placeholder'
+import StepsPlaceholder from './steps-placeholder'
+import SMPlaceholder from './sm-placeholder'
+
+
 
 
 
@@ -183,10 +189,34 @@ const ComponentsTab = (props: Props) => {
       group: 'Advanced-elements',
     },
     {
+      Component: <SearchPlaceholder />,
+      label: 'Search',
+      id: 'search',
+      group: 'Advanced-elements',
+    },
+    {
+      Component: <TCPlaceholder />,
+      label: 'Tabs and Accordions',
+      id: 'tc',
+      group: 'Advanced-elements',
+    },
+    {
       Component: <CheckoutPlaceholder />,
       label: 'Checkout',
       id: 'paymentForm',
       group: 'Basic elements',
+    },
+    {
+      Component: <StepsPlaceholder />,
+      label: 'Steps',
+      id: 'steps',
+      group: 'Advanced-elements',
+    },
+    {
+      Component: <SMPlaceholder />,
+      label: 'Social Media',
+      id: 'sm',
+      group: 'Advanced-elements',
     },
     {
       Component: <LinkPlaceholder />,

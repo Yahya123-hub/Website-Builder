@@ -24,6 +24,11 @@ import Graphs from './graphs'
 import NavbarEditor from './navs'
 import GD from './GD'
 import Modals from './modals'
+import SearchSection from './Search'
+import TabsAndAccordions from './tc'
+import StepsSection from './steps'
+import SMSection from './sm'
+
 
 
 
@@ -88,6 +93,14 @@ const Component_distributor = ({ element }: Props) => {
         return <GD element={element} />
     case 'modals':
         return <Modals element={element} />
+    case 'search':
+        return <SearchSection element={element} />
+    case 'tc':
+        return <TabsAndAccordions element={element} />
+    case 'steps':
+        return <StepsSection element={element} />
+    case 'sm':
+        return <SMSection element={element} />
 
 
     default:
