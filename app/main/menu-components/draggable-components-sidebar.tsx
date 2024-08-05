@@ -41,7 +41,6 @@ import SMPlaceholder from './sm-placeholder'
 
 
 
-
 type Props = {}
 
 const ComponentsTab = (props: Props) => {
@@ -166,7 +165,7 @@ const ComponentsTab = (props: Props) => {
     },
     {
       Component: <VideoPlaceholder />,
-      label: 'Video',
+      label: 'Media',
       id: 'video',
       group: 'Basic elements',
     },

@@ -485,6 +485,27 @@ case 'sm':
   })
 break
 
+
+case 'urlimg':
+  dispatch({
+    type: 'ADD_ELEMENT',
+    payload: {
+      containerId: id,
+      elementDetails: {
+        content: [],
+        id: uuidv4(),
+        name: 'Image',
+        styles: {},
+        type: 'urlimg',
+      },
+    },
+  })
+break
+
+
+
+
+
       case '2Col':
         dispatch({
           type: 'ADD_ELEMENT',

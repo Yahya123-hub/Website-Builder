@@ -71,7 +71,7 @@ const Checkout = (props: Props) => {
 
       <div className="border-none transition-all w-full">
         <div className="flex flex-col gap-4 w-full">
-            <div className="text-white">
+            <div className="text-black">
               <h2 className="text-lg font-semibold">Checkout</h2>
               <form>
                 <div className="mb-4">

@@ -28,6 +28,9 @@ import SearchSection from './Search'
 import TabsAndAccordions from './tc'
 import StepsSection from './steps'
 import SMSection from './sm'
+import ImageComponent from './img'
+
+
 
 
 
@@ -101,6 +104,9 @@ const Component_distributor = ({ element }: Props) => {
         return <StepsSection element={element} />
     case 'sm':
         return <SMSection element={element} />
+    case 'urlimg':
+        return <ImageComponent element={element} />
+
 
 
     default:
