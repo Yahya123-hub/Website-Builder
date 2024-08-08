@@ -14,7 +14,7 @@ import clsx from 'clsx'
 import React from 'react'
 import TabList from './tabs'
 import SettingsTab from './settings'
-import MediaBucketTab from './mediabucket'
+import MediaBucketTab from './Templates'
 import ComponentsTab from './menu-components/draggable-components-sidebar'
 
 const EditorSidebar = () => {

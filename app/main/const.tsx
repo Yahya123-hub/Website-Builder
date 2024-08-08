@@ -30,6 +30,7 @@ export type EditorBtns =
   | 'steps'  
   | 'search'  
   | 'fp'  
+  | 'stack'  
   | 'modals'  
   | 'inputfield'
   | 'greetings'

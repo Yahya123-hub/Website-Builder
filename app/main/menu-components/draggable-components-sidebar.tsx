@@ -35,6 +35,7 @@ import SearchPlaceholder from './search-placeholder'
 import TCPlaceholder from './tc-placeholder'
 import StepsPlaceholder from './steps-placeholder'
 import SMPlaceholder from './sm-placeholder'
+import StackPlaceholder from './stack-placeholder'
 
 
 
@@ -161,6 +162,12 @@ const ComponentsTab = (props: Props) => {
       Component: <TwoColumnsPlaceholder />,
       label: '2 Columns',
       id: '2Col',
+      group: 'layout',
+    },
+    {
+      Component: <StackPlaceholder />,
+      label: 'Stack',
+      id: 'stack',
       group: 'layout',
     },
     {

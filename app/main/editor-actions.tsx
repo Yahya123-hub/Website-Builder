@@ -58,6 +58,13 @@ export type EditorAction =
         withLive: boolean
       }
     }
+  |
+{
+    type: 'LOAD_DATA_LS'
+    payload: {
+      elements: EditorElement[]
+    }
+  }
   | {
       type: 'SET_FUNNELPAGE_ID'
       payload: {

@@ -29,6 +29,7 @@ import TabsAndAccordions from './tc'
 import StepsSection from './steps'
 import SMSection from './sm'
 import ImageComponent from './img'
+import Stack from './stack'
 
 
 
@@ -106,7 +107,8 @@ const Component_distributor = ({ element }: Props) => {
         return <SMSection element={element} />
     case 'urlimg':
         return <ImageComponent element={element} />
-
+    case 'stack':
+        return <Stack element={element} />
 
 
     default:

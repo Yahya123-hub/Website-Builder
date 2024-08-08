@@ -46,13 +46,11 @@ const EditorNavigation = () => {
   const handleOnSave = async () => {
     const content = JSON.stringify(state.editor.elements)
     try {
-      toast('Success', {
-        description: 'Saved Editor', // save editor config 
-      })
+      localStorage.setItem('editorElements', content)
+      console.log('Saved content:', content)
+      window.alert('Editor state saved successfully.')
     } catch (error) {
-      toast('Oppse!', {
-        description: 'Could not save editor',
-      })
+      window.alert('Failed to save editor state.')
     }
   }
 
@@ -65,10 +63,6 @@ const EditorNavigation = () => {
         )}
       >
         <aside className="flex items-center gap-4 max-w-[260px] w-[300px]">
-          {/* Remove Link since it relies on subaccountId and funnelId */}
-          {/* <Link href={`/subaccount/${subaccountId}/funnels/${funnelId}`}>
-            <ArrowLeftCircle />
-          </Link> */}
         </aside>
         <aside>
           <Tabs

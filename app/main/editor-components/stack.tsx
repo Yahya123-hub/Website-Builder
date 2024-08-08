@@ -1,20 +1,24 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
-import { EditorBtns, defaultStyles } from '../const'
+import { toast } from '@/components/ui/use-toast'
+import { EditorBtns,defaultStyles} from '../const'
 import { EditorElement, useEditor } from '../editor-provider'
-import clsx from 'clsx'
-import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import Recursive from './component_distributor'
+import clsx from 'clsx'
 import { Trash } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import React, { DragEvent, MouseEvent } from 'react'
+import Recursive from './component_distributor'
 
-type Props = { element: EditorElement }
+type Props = {
+  element: EditorElement
+}
 
-const Container = ({ element }: Props) => {
+const Stack = ({ element } : Props) => {
   const { id, content, name, styles, type } = element
   const { dispatch, state } = useEditor()
 
-  const handleOnDrop = (e: React.DragEvent, type: string) => {
+  const handleOnDrop = (e: DragEvent<HTMLDivElement>) => {
     e.stopPropagation() //to prevent event bubbling
     const componentType = e.dataTransfer.getData('componentType') as EditorBtns
 
@@ -494,7 +498,7 @@ case 'stack':
         content: [],
         id: uuidv4(),
         name: 'Stack',
-        styles: {display: 'flex', flexDirection: 'column', ...defaultStyles},
+        styles: {},//display: 'flex', flexDirection: 'column', ...defaultStyles},
         type: 'stack',
       },
     },
@@ -556,16 +560,16 @@ break
     }
   }
 
-  const handleDragOver = (e: React.DragEvent) => {
+
+
+
+
+
+  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault()
   }
 
-  const handleDragStart = (e: React.DragEvent, type: string) => {
-    if (type === '__body') return
-    e.dataTransfer.setData('componentType', type)
-  }
-
-  const handleOnClickBody = (e: React.MouseEvent) => {
+  const handleOnClickBody = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
     dispatch({
       type: 'CHANGE_CLICKED_ELEMENT',
@@ -586,13 +590,11 @@ break
 
   return (
     <div
-      style={styles}
+      style={{ ...styles, position: 'relative' }} 
       className={clsx('relative p-4 transition-all group', {
-        'max-w-full w-full': type === 'container' || type === '2Col',
-        'h-fit': type === 'container',
-        'h-full': type === '__body',
-        'overflow-scroll ': type === '__body',
-        'flex flex-col md:!flex-row': type === '2Col',
+        'max-w-full w-full': type === 'stack',
+        'h-fit': type === 'stack',
+        'flex flex-col': type === 'stack',
         '!border-blue-500':
           state.editor.selectedElement.id === id &&
           !state.editor.liveMode &&
@@ -605,11 +607,11 @@ break
           state.editor.selectedElement.id === id && !state.editor.liveMode,
         'border-dashed border-[1px] border-slate-300': !state.editor.liveMode,
       })}
-      onDrop={(e) => handleOnDrop(e, id)}
+      onDrop={handleOnDrop}
       onDragOver={handleDragOver}
       draggable={type !== '__body'}
       onClick={handleOnClickBody}
-      onDragStart={(e) => handleDragStart(e, 'container')}
+      onDragStart={(e) => e.dataTransfer.setData('componentType', 'stack')}
     >
       <Badge
         className={clsx(
@@ -621,16 +623,16 @@ break
           }
         )}
       >
-        {element.name}
+        {name}
       </Badge>
 
       {Array.isArray(content) &&
         content.map((childElement) => (
-          <Recursive
-            key={childElement.id}
-            element={childElement}
-          />
+          <div key={childElement.id} style={{ position: 'absolute' }}>
+            <Recursive element={childElement} />
+          </div>
         ))}
+
 
       {state.editor.selectedElement.id === element.id &&
         !state.editor.liveMode &&
@@ -646,4 +648,4 @@ break
   )
 }
 
-export default Container
+export default Stack

@@ -20,21 +20,19 @@ const EditorContent = ({ liveMode }: Props) => {
     }
   }, [liveMode])
 
-  /*useEffect(() => {
-    const fetchData = async () => {
-      const response = await getFunnelPageDetails(funnelPageId)
-      if (!response) return
-
+  useEffect(() => {
+    const savedEditorData = localStorage.getItem('editorElements')
+    
+    if (savedEditorData) {
+      const parsedData = JSON.parse(savedEditorData)
       dispatch({
-        type: 'LOAD_DATA',
+        type: 'LOAD_DATA_LS',
         payload: {
-          elements: response.content ? JSON.parse(response?.content) : '',
-          withLive: !!liveMode,
-        },
+          elements: parsedData,
+        }, 
       })
     }
-    fetchData()
-  }, [funnelPageId])*/
+  }, [dispatch])
 
   const handleClick = () => {
     dispatch({

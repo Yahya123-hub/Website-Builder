@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Database, Plus, SettingsIcon } from 'lucide-react'
+import { LucideLayoutTemplate, Plus, SettingsIcon } from 'lucide-react'
 
 type Props = {}
 
@@ -24,7 +24,7 @@ const TabList = (props: Props) => {
         value="Media"
         className="w-10 h-10 p-0 data-[state=active]:bg-muted"
       >
-        <Database />
+        <LucideLayoutTemplate />
       </TabsTrigger>
     </TabsList>
   )
