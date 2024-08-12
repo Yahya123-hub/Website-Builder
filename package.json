@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@hookform/resolvers": "^3.9.0",
+    "@mui/material": "^5.16.7",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -48,6 +51,7 @@
     "input-otp": "^1.2.4",
     "lucide": "^0.417.0",
     "lucide-react": "^0.402.0",
+    "mongodb": "^6.8.0",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -55,6 +59,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
+    "react-modal": "^3.16.1",
     "react-resizable-panels": "^2.0.20",
     "react-slick": "^0.30.2",
     "recharts": "^2.12.7",

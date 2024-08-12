@@ -38,10 +38,6 @@ import SMPlaceholder from './sm-placeholder'
 import StackPlaceholder from './stack-placeholder'
 
 
-
-
-
-
 type Props = {}
 
 const ComponentsTab = (props: Props) => {

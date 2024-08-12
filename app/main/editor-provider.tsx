@@ -354,6 +354,19 @@ const editorReducer = (
           },
         }
 
+    case 'LOAD_DATA_TEMPLATE':
+        return {
+          ...initialState,
+          editor: {
+            ...initialState.editor,
+            elements: action.payload.elements || initialEditorState.elements,
+          },
+        }
+
+
+  
+
+
 
     case 'SET_FUNNELPAGE_ID':
       const { funnelPageId } = action.payload

@@ -65,7 +65,17 @@ export type EditorAction =
       elements: EditorElement[]
     }
   }
-  | {
+  |
+
+  {
+    type: 'LOAD_DATA_TEMPLATE'
+    payload: {
+      elements: EditorElement[]
+    }
+  }
+  |
+  
+  {
       type: 'SET_FUNNELPAGE_ID'
       payload: {
         funnelPageId: string

@@ -1,0 +1,40 @@
+1. **E-commerce Websites**
+2. **Social Media Platforms**
+3. **Streaming Services and Video Platforms**
+4. **News and Media Websites**
+5. **Blogs and Content Sites**
+6. **Online Learning and Educational Platforms**
+7. **Portfolio and Personal Websites**
+8. **Business and Corporate Websites**
+9. **Forums and Community Sites**
+10. **Gaming and Entertainment Websites**
+11. **Health and Wellness Sites**
+12. **Job Boards and Career Websites**
+
+
+most used components in above websites : 
+
+Navigation Menus -d
+Search Bars -d
+Carousels and Sliders -d
+Grids and Cards-d
+Modals and Pop-ups-d
+Tabs and Accordions-d
+Steps -d
+Social Media Integration -d
+Media Elements -d
+Sidebars -d
+Responsive Design Components -d
+Infographics and Data Visualizations -d
+Animations-d
+
+1. **Header** -d
+2. **Hero Section** -d
+3. **Value Proposition** -d
+4. **Forms** -d
+5. **Testimonials or Social Proof**-d
+6. **Features or Benefits Section** -d
+7. **Visual Elements** -d
+8. **Footer** -d
+9. **Call-to-Action (CTA) Buttons** -d
+10. **Loading Indicators** -d
